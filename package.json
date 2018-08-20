@@ -73,7 +73,6 @@
     ],
     "collectCoverageFrom": [
       "src/**/*.{ts}",
-      "!**/src/box/boxServiceConfig.{ts}",
       "!**/**/index.{ts}"
     ]
   },
