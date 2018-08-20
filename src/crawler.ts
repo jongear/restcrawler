@@ -87,7 +87,6 @@ export default class Crawler {
           } else if (prop instanceof Array) {
             model[key] = prop
           } else if (prop instanceof Object) {
-            console.log(JSON.stringify(prop))
             const val = await this.process(requestModel[key], prop)
             model[key] = val
           }
@@ -104,10 +103,6 @@ export default class Crawler {
     if (!request.$route) {
       return null
     }
-
-    console.info(
-      `GETTING URI: ${request.$route} with ${request.$routeIdentifiers}`
-    )
 
     let path = request.$route
     if (request.$routeIdentifiers) {
