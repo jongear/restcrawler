@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - '8'
+cache:
+  directories:
+    - node_modules
+sudo: required
+
+branches:
+  only:
+    - master
+
+install:
+  - npm install
+
+before_script:
+  - npm prune
+
+script:
+  - npm run lint
+  - npm run report-coverage
+  - npm run build
+
+after_success:
+  - semantic-release
